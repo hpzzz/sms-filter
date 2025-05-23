@@ -1,0 +1,26 @@
+{
+    "request": {
+      "method": "POST",
+      "url": "/evaluateUri",
+      "bodyPatterns": [
+        {
+          "matchesJsonPath": "$[?(@.uri =~ /.*google\\.com.*/)]"
+        }
+      ],
+      "headers": {
+        "Authorization": {
+          "equalTo": "Bearer mock-token"
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "jsonBody": {
+        "threat": "none"
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  }
+  
