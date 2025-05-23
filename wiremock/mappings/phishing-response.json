@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/evaluateUri",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.uri =~ /.*m-bonk\\.pl.*/)]"
+      }
+    ],
+    "headers": {
+      "Authorization": {
+        "equalTo": "Bearer mock-token"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "threat": "phishing"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
